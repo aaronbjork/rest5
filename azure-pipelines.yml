@@ -18,3 +18,8 @@ steps:
 
 - task: PublishBuildArtifacts@1
 
+- task: AzureRmWebAppDeployment@3
+  inputs:
+    azureSubscription: 'dev-resources-connect'
+    WebAppName: 'rest3'
+    Package: '$(Build.ArtifactStagingDirectory)'
